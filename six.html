@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+
+
+    <div class="container" style="border-radius: 15px; border: 2px solid black; background-color: #95e9f8; width: 60%; margin: auto;">
+        <h1 style="font-size: 85px; line-height: 40px; letter-spacing: 5px;  text-align: center; color: red; font-weight: bold;">Form validation</h1>
+        <br>
+        <br>
+        <div style="margin: auto; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">Enter Your Name:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="name" type="text" placeholder="Enter Your name" style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="margin: 30px 0; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">Enter your Email:</span>&nbsp;
+            <input id="email" type="text" placeholder="Enter your email" style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="margin: 30px 0; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">Enter your Age: </span>&nbsp;
+            <input id="age" type="number"   style="height: 30px ;font-size: 25px; width: 80px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="display: flex; justify-content: center;">
+        <button style=" margin-top: 0px; background-color: #5e80ed;padding: 20px;border-radius: 20px; width:200px ; font-size: 25px; margin-right: 0px; margin-left: 0px; border: 0; color: white;" onclick="validateForm()">Submit</button>
+    </div>
+    </div>
+
+
+  
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const age = document.getElementById("age").value;
+
+            if (typeof name !== "string" || name.trim() === "") {
+                alert("Name should be a non-empty string.");
+                return;
+            }
+
+            if (typeof email !== "string" || email.trim() === "") {
+                alert("Email should be a non-empty string.");
+                return;
+            }
+
+            if (isNaN(age) || age.trim() === "") {
+                alert("Age should be a number.");
+                return;
+            }
+
+             alert("Form validation successful!");
+        }
+    </script>
+</body>
+</html>

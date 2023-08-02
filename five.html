@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Application</title>
+</head>
+<style>
+    button:hover{
+        background-color: #1d72c8;
+        transition: 0.6s;
+    }
+    button{
+        background-color: #7281e5;
+    }
+</style>
+<body>
+    <div class="container" style="border-radius: 15px; border: 2px solid black; background-color: #95e9f8; width: 60%; margin: auto;">
+        <h1 style="font-size: 65px; line-height: 40px; letter-spacing: 5px;  text-align: center; color: red; font-weight: bold;">Shipping Application</h1>
+        <br>
+        <br>
+        <h2 style="font-size: 30px; line-height: 40px; letter-spacing: 0px;  text-align: center; color: rgb(48, 129, 106); font-weight: bold;">Available package types: standard, express, overnight</h2>
+       <br>
+       <br>
+        <div style="margin: auto; display: flex; justify-content: center;gap: 20px; align-items: center;">
+            <input id="packageTypeInput" type="text"  placeholder="Enter package type"  style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;display: flex; justify-content: center; align-items: center;">
+            <button  style="padding: 0px;line-height: 50px;   border-radius: 20px;  display: flex; justify-content: center; width: 200px; margin-bottom: 0px;font-size: 25px; border: 0; color: white;" onclick="calculateDeliveryTime()">calculate</button>
+         </div><br>
+         <h2 style="font-size: 20px; line-height: 40px; letter-spacing: 0px;  text-align: center; color: rgb(40, 43, 42); font-weight: bold;" id="result"></h2>
+         <!-- <div style="margin: 30px 0; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">  Collect adult tickets :</span>&nbsp;
+            <input id="adult" type="text"  placeholder="adult ticket here"  style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="margin: 30px 0; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">  Collect seniors tickets :</span>&nbsp;
+            <input id="seniors" type="text"  placeholder="seniors ticket here"  style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="display: flex; justify-content: space-around;align-items: center;"> -->
+         </div>
+    </div>
+</body>
+<script type="text/javascript">
+        function calculateDeliveryTime() {
+    const packageTypeInput = document.getElementById("packageTypeInput");
+    const packageType = packageTypeInput.value;
+
+    const deliveryTimes = {
+        standard: "3-5 days",
+        express: "1-2 days",
+        overnight: "next day",
+    };
+
+    const resultElement = document.getElementById("result");
+    const estimatedDeliveryTime = deliveryTimes[packageType] || "Unknown";
+    resultElement.innerText = `Estimated delivery time for '${packageType}' package: ${estimatedDeliveryTime}`;
+}
+    
+</script>
+</html>

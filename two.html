@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+</head>
+<body>
+    <div class="container" style="border-radius: 15px; border: 2px solid black; background-color: #95e9f8; width: 60%; margin: auto;">
+        <h1 style="font-size: 85px; line-height: 40px; letter-spacing: 5px;  text-align: center; color: red; font-weight: bold;">Login page</h1>
+        <br>
+        <br>
+        <div style="margin: auto; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">Enter username:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="name" type="text" placeholder="Enter Your name" style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <div style="margin: 30px 0; display: flex; justify-content: center; align-items: center;">
+            <span style="font-size: 25px;">Enter your password:</span>&nbsp;
+            <input id="password" type="number" placeholder="Enter Your password" style="height: 30px ;font-size: 25px; width: 300px; border: 0; outline: none; border-radius: 10px; padding: 5px 15px;">
+        </div>
+        <button style="background-color: #5e80ed;padding: 20px;border-radius: 20px;margin: auto; display: flex; justify-content: center; width: 300px; margin-bottom: 30px;font-size: 25px; border: 0; color: white;" onclick="login()">Login</button>
+
+    </div>
+</body>
+<script type="text/javascript">
+    function login(username,password) {
+        var name = document.getElementById("name").value 
+        var password = document.getElementById("password").value 
+        
+        var correctname = "admin";
+        var correctpassword = "12345";
+
+        if (name === correctname && password ===correctpassword) {
+            alert("login successfully")
+        }
+        else{
+            alert("Invalid credentials")
+        }
+    }
+    </script>
+</html>

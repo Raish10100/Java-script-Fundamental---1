@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Shopping List</h1>
+        <ul id="shoppingList">
+            
+        </ul>
+    </div>
+    <script src="text/javascript">
+        const shoppingList = [
+    "Apples",
+    "Bananas",
+    "Milk",
+    "Bread",
+    "Eggs",
+    "Cheese",
+    "Tomatoes",
+    "Potatoes",
+    "Chicken",
+    "Rice",
+];
+
+function displayShoppingList() {
+    const shoppingListElement = document.getElementById("shoppingList");
+
+    for (let i = 0; i < shoppingList.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.innerText = shoppingList[i];
+        shoppingListElement.appendChild(listItem);
+    }
+}
+
+displayShoppingList();
+
+    </script>
+</body>
+</html>

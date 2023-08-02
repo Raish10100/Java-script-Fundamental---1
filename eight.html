@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown App</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown App</h1>
+        <button onclick="startCountdown()">Start Countdown</button>
+        <div id="countdownDisplay"></div>
+    </div>
+
+    <script type="text/javascript">
+        function startCountdown() {
+    const countdownDisplay = document.getElementById("countdownDisplay");
+    countdownDisplay.textContent = "Countdown started!";
+
+    let count = 10;
+    const countdownInterval = setInterval(() => {
+        countdownDisplay.textContent = count;
+        count--;
+
+        if (count < 0) {
+            clearInterval(countdownInterval);
+            countdownDisplay.textContent = "Countdown completed!";
+        }
+    }, 1000);
+}
+
+    </script>
+</body>
+</html>
